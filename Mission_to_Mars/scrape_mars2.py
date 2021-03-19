@@ -32,13 +32,14 @@ def scrape_info():
     browser.visit(img_url)
     time.sleep(1)
 
-    browser.find_by_css('.BaseImage').click()
-    
+    click_button = browser.find_by_css('.BaseImagePlaceholder')
+    click_button.click()
+
     html = browser.html
     img_soup = BeautifulSoup(html, 'html.parser')
 
-    featured_image = soup.find_all('img')[1]["src"]
-    url_fimage = img_url + featured_image
+    featured_image = soup.find_all('img', class_="BaseImage")
+    url_fimage = (featured_image[0]['src'])
 
     #Mars facts (used pandas)
 
@@ -75,19 +76,16 @@ def scrape_info():
         title = browser.find_by_css('.title').text
 
         img_urls.append({'title': title,
-                         'img_ur': fin_url})
-    
-    browser.back()
-    browser.quit()
-    
+                         'img_url': fin_url})
+
+        browser.back()
+        browser.quit()
+
 #Create a scrape function via a dictionary
 
-    mars_data = {"news_title": news_title,
-                "news_p": news_p,
-                "featured_image_url": url_fimage,
-                "mars_facts": mars_facts,
-                "hemispheres": img_urls}
+    scrape_mars = {"news_title": news_title,
+                   "news_p": news_p,
+                   "featured_image_url": url_fimage,
+                   "mars_facts": mars_facts,
+                   "hemispheres": img_urls}
 
-    browser.quit()
-
-    return mars_data

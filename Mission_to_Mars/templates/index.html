@@ -1,15 +1,75 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Scrape Mars Flask App</title>
-<body>
-    <h1>Misson to Mars</h1>
-    <button>
-        <a href='/scrape'></a>
-    </button>
-    <p>{{planet_mars['news_title]}}</p>
-    <p>{{planet_mars['news_p]}}</p>
-    <img src='{{planet_mars["image_url"]}}'/>
-</body>
-</head>
-</html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Infinity & Beyond</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <p>To the edge of the universe and back. Endure and survive.</p>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+      </div>
+      <h2>Recent Mars News</h2>
+      <p>{{data_from_flask['news_title']}}</p>
+      <p>{{data_from_flask['news_p']}}</p>
+      <h3>Featured Mars Image</h3>
+      <img src='{{data_from_flask["featured_image_url"]}}' alt="feature">
+      <h3>Mars Facts</h3>
+      <table border="1" class="dataframe">
+        <thead>
+          <tr style="text-align: right;">
+            <th></th>
+            <th>Facts</th>
+          </tr>
+          <tr>
+            <th>Mars Planet Profile</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Polar Diameter:</th>
+            <td>6,752 km</td>
+          </tr>
+          <tr>
+            <th>Mass:</th>
+            <td>6.39 × 10^23 kg (0.11 Earths)</td>
+          </tr>
+          <tr>
+            <th>Moons:</th>
+            <td>2 (Phobos &amp; Deimos)</td>
+          </tr>
+          <tr>
+            <th>Orbit Distance:</th>
+            <td>227,943,824 km (1.38 AU)</td>
+          </tr>
+          <tr>
+            <th>Orbit Period:</th>
+            <td>687 days (1.9 years)</td>
+          </tr>
+          <tr>
+            <th>Surface Temperature:</th>
+            <td>-87 to -5 °C</td>
+          </tr>
+          <tr>
+            <th>First Record:</th>
+            <td>2nd millennium BC</td>
+          </tr>
+          <tr>
+            <th>Recorded By:</th>
+            <td>Egyptian astronomers</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Mars Hemispheres</h3>
+    </div>
+    
+  
+  
+  
+  </body></html>
