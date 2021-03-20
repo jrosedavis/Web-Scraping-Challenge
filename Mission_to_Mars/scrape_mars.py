@@ -32,7 +32,7 @@ def scrape_info():
     browser.visit(img_url)
     time.sleep(1)
 
-    browser.find_by_css('img.BaseImage').click()
+    browser.find_by_css('img.BaseImage').click() #errored - not accepintg JNB method
     
     html = browser.html
     img_soup = BeautifulSoup(html, 'html.parser')
@@ -63,7 +63,7 @@ def scrape_info():
     main_hemis_url = 'https://astrogeology.usgs.gov'
 
     for x in range(4):
-        html = browser.find_by_css('.thumb')[x].click() #tried css also
+        html = browser.find_by_css('.thumb')[x].click() #would not accept JNB method
 
         img_html = browser.html
         hemis_soup = BeautifulSoup(img_html, 'html.parser')
