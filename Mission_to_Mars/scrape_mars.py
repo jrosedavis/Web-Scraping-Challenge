@@ -32,13 +32,13 @@ def scrape_info():
     browser.visit(img_url)
     time.sleep(1)
 
-    browser.find_by_css('.BaseImage').click()
+    browser.find_by_css('img.BaseImage').click()
     
     html = browser.html
     img_soup = BeautifulSoup(html, 'html.parser')
 
-    featured_image = soup.find_all('img')[1]["src"]
-    url_fimage = img_url + featured_image
+    featured_image = img_soup.find_all('img', class_='BaseImage')[3]['src']
+    featured_img_url = featured_image
 
     #Mars facts (used pandas)
 
@@ -57,14 +57,13 @@ def scrape_info():
     html = browser.html
 
     hemis_soup = BeautifulSoup(html, 'html.parser')
-    hemis_items = soup.find_all('div', class_='item')
+    hemis_items = soup.find_all('div', class_='downloads')
 
     img_urls = []
     main_hemis_url = 'https://astrogeology.usgs.gov'
 
-    for x in range(len(main_hemis_url)):
-        html = browser.find_by_css('h3')
-        html[x].click()
+    for x in range(4):
+        html = browser.find_by_css('.thumb')[x].click() #tried css also
 
         img_html = browser.html
         hemis_soup = BeautifulSoup(img_html, 'html.parser')
@@ -79,12 +78,12 @@ def scrape_info():
     
     browser.back()
     browser.quit()
-    
+
 #Create a scrape function via a dictionary
 
     mars_data = {"news_title": news_title,
                 "news_p": news_p,
-                "featured_image_url": url_fimage,
+                "featured_image_url": featured_img_url,
                 "mars_facts": mars_facts,
                 "hemispheres": img_urls}
 

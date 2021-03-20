@@ -18,7 +18,7 @@
       <p>{{data_from_flask['news_title']}}</p>
       <p>{{data_from_flask['news_p']}}</p>
       <h3>Featured Mars Image</h3>
-      <img src='{{data_from_flask["featured_image_url"]}}' alt="feature">
+      <img src='{{data_from_flask["featured_image_url"]}}' alt="feature" style="width: 250px;height:450px;">
       <h3>Mars Facts</h3>
       <table border="1" class="dataframe">
         <thead>
@@ -67,6 +67,14 @@
         </tbody>
       </table>
       <h3>Mars Hemispheres</h3>
+      <h3>{{data_from_flask["hemispheres"][0]["title"]}}</h3>
+      <img src='{{data_from_flask["hemispheres"][0]["img_ur"]}}' alt="feature" style="width: 400px;height:450px;"/>
+      <h3>{{data_from_flask["hemispheres"][1]["title"]}}</h3>
+      <img src='{{data_from_flask["hemispheres"][1]["img_ur"]}}' alt="feature" style="width: 400px;height:450px;"/>
+      <h3>{{data_from_flask["hemispheres"][2]["title"]}}</h3>
+      <img src='{{data_from_flask["hemispheres"][2]["img_ur"]}}' alt="feature" style="width: 400px;height:450px;"/>
+      <h3>{{data_from_flask["hemispheres"][3]["title"]}}</h3>
+      <img src='{{data_from_flask["hemispheres"][3]["img_ur"]}}' alt="feature" style="width: 400px;height:450px;"/>
     </div>
     
   

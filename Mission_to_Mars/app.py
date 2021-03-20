@@ -10,7 +10,7 @@ client=pymongo.MongoClient(mongo_conn)
 #Home route into MongoDB
 @app.route('/')
 def index():
-    planet_mars = client.mars_db.mars.find()
+    planet_mars = client.mars_db.mars.find_one()
     if planet_mars:
         return render_template('index.html', data_from_flask=planet_mars)
     else:
