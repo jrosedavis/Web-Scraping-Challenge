@@ -42,3 +42,9 @@
     * Store the return value in Mongo as a Python Dictionary
 * Create a root route `/` that will query the Mongo database and pass the Mars Data into an HTML template to display the data
 * Create a template HTML file called `index.html` that will take the Mars Data Dictionary and display all of the data in the appropriate HTML elements
+
+#### Final App Part 1: ![image](https://user-images.githubusercontent.com/72557712/120234117-86b3d900-c214-11eb-8a1b-cf8e34327458.png)
+
+#### Final App Part 2: ![image](https://user-images.githubusercontent.com/72557712/120234152-9cc19980-c214-11eb-9f88-c2d7f61be910.png)
+
+
